@@ -14,6 +14,9 @@ function KombatApp() {
     useEffect(() => {
         tg.ready()
         tg.expand()
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        tg.requestFullscreen()
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
         const lastCurrentEnergy = parseInt(localStorage.getItem('energy') as string)
