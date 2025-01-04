@@ -9,12 +9,11 @@ import {energySlice} from "../../store/Slices/EnergySlice.ts";
 import {scoreSlice} from "../../store/Slices/ScoreSlice.ts";
 
 const Game: FC = () => {
-    const {energy} = useTypedSelector(state => state.energyReducer)
-    const {score} = useTypedSelector(state => state.scoreReducer)
+    const {energy, totalEnergy} = useTypedSelector(state => state.energyReducer)
+    const {score, scoreTapNumber} = useTypedSelector(state => state.scoreReducer)
     const {energyDecrement, energyIncrement} = energySlice.actions
     const {scoreIncrement} = scoreSlice.actions
     const dispatch: AppDispatch = useAppDispatch()
-    const totalEnergy = 3000
     const widthForBar = energy * 100 / totalEnergy
 
 
@@ -47,7 +46,7 @@ const Game: FC = () => {
 
             target.style.setProperty('--tiltX', `${tiltX}deg`)
             target.style.setProperty('--tiltY', `${tiltY}deg`)
-            createFloatingScore(event)
+            createFloatingScore(event, scoreTapNumber)
 
             dispatch(scoreIncrement())
             dispatch(energyDecrement())

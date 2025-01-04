@@ -22,7 +22,7 @@
 .upgrade-item button {
     width: 100%;
     border: none;
-    background-color: #ce991d;
+    background: linear-gradient(170deg, rgba(67,5,250,1) 0%, rgba(139,6,157,1) 70%);
     height: 30px;
     margin-top: 10px;
     color: white;
