@@ -11,7 +11,7 @@ const UpgradeItem: FC<UpgradeItemProps> = ({name, img}) => {
     return (
         <div className='upgrade-item'>
             <img src={img} alt="upgrade_item_src"/>
-            <h3>{name}</h3>
+            <h4>{name}</h4>
             <button>{price}</button>
         </div>
     );

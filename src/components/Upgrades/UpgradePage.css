@@ -1,0 +1,28 @@
+.upgrade-list {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.upgrade-item {
+    display: block;
+    font-size: 13px;
+    height: 100%;
+    width: 120px;
+}
+.upgrade-item img {
+    border-radius: 0;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.upgrade-item button {
+    width: 100%;
+    border: none;
+    background-color: #ce991d;
+    height: 20px;
+    margin-top: 10px;
+}
