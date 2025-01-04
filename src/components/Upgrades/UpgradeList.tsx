@@ -1,5 +1,6 @@
 import {UpgradesConsts} from "../../Constants/UpgradesConsts.ts";
 import UpgradeItem from "./UpgradeItem.tsx";
+import './UpgradePage.css'
 
 const UpgradeList = () => {
     return (

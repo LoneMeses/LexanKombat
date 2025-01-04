@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
-
+import './UpgradePage.css'
 interface UpgradeItemProps {
     name: string,
     img: string,
