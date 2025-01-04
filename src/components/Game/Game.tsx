@@ -51,7 +51,7 @@ const Game: FC = () => {
 
             dispatch(scoreIncrement())
             dispatch(energyDecrement())
-            localStorage.setItem('value', score.toString())
+            localStorage.setItem('score', score.toString())
             localStorage.setItem('energy', energy.toString())
             localStorage.setItem('closeTime', Date.now().toString())
 
