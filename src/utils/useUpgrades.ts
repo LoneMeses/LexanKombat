@@ -7,34 +7,39 @@ import {useDispatch} from "react-redux";
 
 
 export const useUpgrades = () => {
-    const {RusikPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
+    const {RuslanPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
     const {score, scoreTapNumber} = useTypedSelector(state => state.scoreReducer)
     const {energyTapNumberDecrease, totalEnergy} = useTypedSelector(state => state.energyReducer)
     const {scoreMinus, scoreTapNumberIncrease} = scoreSlice.actions
     const {EnergyLossOnTap, totalEnergyAdd} = energySlice.actions
-    const {vodkaPriceIncrement, rusikPriceIncrement} = priceSlice.actions
+    const {vodkaPriceIncrement, ruslanPriceIncrement} = priceSlice.actions
     const dispatch: AppDispatch = useDispatch()
     const BuyUpgradeVodka = () => {
-        dispatch(scoreMinus(VodkaPrice))
-        dispatch(vodkaPriceIncrement())
-        dispatch(EnergyLossOnTap(1))
-        dispatch(scoreTapNumberIncrease())
-        localStorage.setItem('score', score.toString())
-        localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
-        localStorage.setItem('vodkaPrice', VodkaPrice.toString())
-        localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+        if (score >= VodkaPrice) {
+            dispatch(scoreMinus(VodkaPrice))
+            dispatch(vodkaPriceIncrement())
+            dispatch(EnergyLossOnTap(1))
+            dispatch(scoreTapNumberIncrease())
+            localStorage.setItem('score', score.toString())
+            localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
+            localStorage.setItem('vodkaPrice', VodkaPrice.toString())
+            localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+        }
+
     }
-    const BuyUpgradeRusik = () => {
-        dispatch(scoreMinus(RusikPrice))
-        dispatch(rusikPriceIncrement())
-        dispatch(totalEnergyAdd(100))
-        localStorage.setItem('score', score.toString())
-        localStorage.setItem('rusikPrice', RusikPrice.toString())
-        localStorage.setItem('totalEnergy', totalEnergy.toString())
+    const BuyUpgradeRuslan = () => {
+        if (score >= RuslanPrice) {
+            dispatch(scoreMinus(RuslanPrice))
+            dispatch(ruslanPriceIncrement())
+            dispatch(totalEnergyAdd(100))
+            localStorage.setItem('score', score.toString())
+            localStorage.setItem('ruslanPrice', RuslanPrice.toString())
+            localStorage.setItem('totalEnergy', totalEnergy.toString())
+        }
     }
 
     return {
-        BuyUpgradeRusik,
+        BuyUpgradeRuslan,
         BuyUpgradeVodka,
     }
 }

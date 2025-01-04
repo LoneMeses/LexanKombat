@@ -1,12 +1,12 @@
 import Vodka from '../../assets/Vodka.png'
-import Rusik from '../../assets/Rusik.png'
+import Ruslan from '../../assets/Rusik.png'
 import './UpgradePage.css'
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {useUpgrades} from "../../utils/useUpgrades.ts";
 
 const UpgradeList = () => {
-    const {RusikPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
-    const {BuyUpgradeVodka, BuyUpgradeRusik} = useUpgrades()
+    const {RuslanPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
+    const {BuyUpgradeVodka, BuyUpgradeRuslan} = useUpgrades()
     return (
         <div className='upgrade-list'>
             <div className='upgrade-item'>
@@ -16,10 +16,10 @@ const UpgradeList = () => {
                 <button onClick={BuyUpgradeVodka}>{VodkaPrice}</button>
             </div>
             <div className='upgrade-item'>
-                <img src={Rusik} alt="upgrade_item_src"/>
+                <img src={Ruslan} alt="upgrade_item_src"/>
                 <h4>Дать покурить Русику</h4>
                 <p>+100 к энергии</p>
-                <button onClick={BuyUpgradeRusik}>{RusikPrice}</button>
+                <button onClick={BuyUpgradeRuslan}>{RuslanPrice}</button>
             </div>
         </div>
     );

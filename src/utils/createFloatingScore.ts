@@ -7,7 +7,7 @@ export const createFloatingScore = (event: React.MouseEvent, floatingNumber: num
     floatingScore.id = 'floating-score';
     floatingScore.style.left = `${event.clientX}px`;
     floatingScore.style.top = `${event.clientY}px`;
-    floatingScore.textContent = `${floatingNumber}`;
+    floatingScore.textContent = `+${floatingNumber}`;
     document.body.appendChild(floatingScore);
     setTimeout(() => {
         floatingScore.remove();
