@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IScore} from "../../types/IScore.ts";
 
 
@@ -13,6 +13,12 @@ export const scoreSlice = createSlice({
     reducers: {
         scoreIncrement: (state: IScore) => {
             state.score += state.scoreTapNumber
+        },
+        scoreMinus: (state: IScore, action: PayloadAction<number>) => {
+            state.score -= action.payload
+        },
+        scoreTapNumberIncrease: (state: IScore)=> {
+            state.scoreTapNumber += 1
         }
     }
 })

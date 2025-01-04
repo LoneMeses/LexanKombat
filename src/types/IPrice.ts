@@ -1,3 +1,4 @@
 export interface IPrice {
-    price: number,
+    VodkaPrice: number,
+    RusikPrice: number,
 }

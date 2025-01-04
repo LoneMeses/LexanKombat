@@ -6,6 +6,7 @@ const initialState: IEnergy = {
     energy: parseInt(localStorage.getItem("energy") as string) || 3000,
     energyTapNumberIncrease: parseInt(localStorage.getItem("energyTapNumberIncrease") as string) || 1,
     energyTapNumberDecrease: parseInt(localStorage.getItem("energyTapNumberDecrease") as string) || 1,
+    totalEnergy: parseInt(localStorage.getItem("totalEnergy") as string) || 3000,
 }
 
 export const energySlice = createSlice({
@@ -24,6 +25,9 @@ export const energySlice = createSlice({
         EnergyLossOnTap (state: IEnergy, action: PayloadAction<number>) {
             state.energyTapNumberDecrease += action.payload
         },
+        totalEnergyAdd (state: IEnergy, action: PayloadAction<number>) {
+            state.totalEnergy += action.payload
+        }
     }
 })
 export default energySlice.reducer
