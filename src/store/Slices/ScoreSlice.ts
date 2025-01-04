@@ -4,6 +4,7 @@ import {IScore} from "../../types/IScore.ts";
 
 const initialState: IScore = {
     score: parseInt(localStorage.getItem("score") as string) || 0,
+    scoreTapNumber: parseInt(localStorage.getItem("scoreTapNumber") as string) || 1,
 }
 
 export const scoreSlice = createSlice({
@@ -11,7 +12,7 @@ export const scoreSlice = createSlice({
     initialState,
     reducers: {
         scoreIncrement: (state: IScore) => {
-            state.score += 1
+            state.score += state.scoreTapNumber
         }
     }
 })

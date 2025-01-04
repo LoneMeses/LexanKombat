@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer.tsx";
 import {Route, Routes} from "react-router";
 import Form from "./components/Form/Form.tsx";
 import './App.css'
+import UpgradePage from "./components/Upgrades/UpgradePage.tsx";
 
 function KombatApp() {
     const {tg} = useTelegram()
@@ -14,9 +15,6 @@ function KombatApp() {
     useEffect(() => {
         tg.ready()
         tg.expand()
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        tg.requestFullscreen()
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
         const lastCurrentEnergy = parseInt(localStorage.getItem('energy') as string)
@@ -36,6 +34,7 @@ function KombatApp() {
             <Routes>
                 <Route index element={<Game/>}/>
                 <Route path={'/form'} element={<Form/>}/>
+                <Route path={'/upgrade'} element={<UpgradePage/>}/>
             </Routes>
             <Footer/>
         </div>

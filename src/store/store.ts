@@ -1,10 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import energyReducer from './Slices/EnergySlice.ts'
 import scoreReducer from './Slices/ScoreSlice.ts'
+import priceReducer from './Slices/PriceSlice.ts'
 
 const rootReducer = combineReducers({
     energyReducer,
-    scoreReducer
+    scoreReducer,
+    priceReducer
 })
 
 export const store = configureStore({

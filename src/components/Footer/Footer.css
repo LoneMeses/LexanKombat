@@ -9,12 +9,12 @@
     border-bottom: none;
     box-shadow: 0 0 15px #0f0f11ff;
 }
-.footer .home-div {
+.footer .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footer .home-div .home-btn {
+.footer .wrapper .wrapper-button {
     color: grey;
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
@@ -22,30 +22,13 @@
     flex-direction: column;
     align-items: center;
 }
-.footer .home-div .home-btn .home-icon {
+.footer .wrapper .wrapper-button .wrapper-icon {
     width: 25px;
     height: 25px;
 }
 .footer hr {
     height: 40px;
     border-color: grey;
-}
-.footer .loss-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.footer .loss-div .loss-btn {
-    color: grey;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.footer .loss-div .loss-btn .loss-icon {
-    width: 25px;
-    height: 25px;
 }
 .active {
     color: white;

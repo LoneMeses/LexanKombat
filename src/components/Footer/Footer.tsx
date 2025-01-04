@@ -1,4 +1,5 @@
 import {AiOutlineHome, AiOutlineDollar} from "react-icons/ai";
+import { LuGamepad2 } from "react-icons/lu";
 import './Footer.css'
 import {Link} from "react-router";
 import {FC} from "react";
@@ -7,10 +8,10 @@ const Footer: FC = () => {
 
     return (
         <div className={'footer'}>
-            <div className={'home-div'}>
-                <Link  to={''} className={'home-btn active'}>
+            <div className={'wrapper'}>
+                <Link  to={''} className={'wrapper-button'}>
                     <div>
-                        <AiOutlineHome className={'home-icon'}/>
+                        <AiOutlineHome className={'wrapper-icon'}/>
                     </div>
                     <div>
                         Главная
@@ -18,10 +19,21 @@ const Footer: FC = () => {
                 </Link>
             </div>
             <hr/>
-            <div className="loss-div">
-                <Link to={'form'} className={'loss-btn'}>
+            <div className={'wrapper'}>
+                <Link to={'upgrade'} className={'wrapper-button'}>
                     <div>
-                        <AiOutlineDollar className={'loss-icon'}/>
+                        <LuGamepad2 className={'wrapper-icon'}/>
+                    </div>
+                    <div>
+                        Улучшения
+                    </div>
+                </Link>
+            </div>
+            <hr/>
+            <div className={'wrapper'}>
+                <Link to={'form'} className={'wrapper-button'}>
+                    <div>
+                        <AiOutlineDollar className={'wrapper-icon'}/>
                     </div>
                     <div>
                         Вывод
