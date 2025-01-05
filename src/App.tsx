@@ -22,7 +22,7 @@ function KombatApp() {
         tg.expand()
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
-        const energyForAdd = ((openTime - closeTime) * energyTapNumberIncrease / 1000)
+        const energyForAdd = Math.ceil(((openTime - closeTime) * energyTapNumberIncrease / 1000))
         setTimeout(() => {
             dispatch(energyOpenAddPlus(energyForAdd))
         }, 1000)
