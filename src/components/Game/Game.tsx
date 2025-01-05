@@ -31,6 +31,11 @@ const Game: FC = () => {
         //eslint-disable-next-line
     }, [energy])
 
+    useEffect(() => {
+        localStorage.setItem('score', score.toString())
+        localStorage.setItem('energy', energy.toString())
+    }, [score, energy]);
+
     const onClickHandler = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
         if (energy > 0 && energy >= scoreTapNumber) {
             const target = event.target as HTMLImageElement
@@ -54,8 +59,6 @@ const Game: FC = () => {
             localStorage.setItem('closeTime', Date.now().toString())
 
             setTimeout(() => {
-                localStorage.setItem('score', score.toString())
-                localStorage.setItem('energy', energy.toString())
                 target.style.setProperty('--tiltX', `0deg`)
                 target.style.setProperty('--tiltX', `0deg`)
             }, 300)

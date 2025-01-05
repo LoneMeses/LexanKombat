@@ -3,10 +3,21 @@ import Ruslan from '../../assets/Rusik.png'
 import './UpgradePage.css'
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {useUpgrades} from "../../utils/useUpgrades.ts";
+import {useEffect} from "react";
 
 const UpgradeList = () => {
     const {RuslanPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
+    const {score, scoreTapNumber} = useTypedSelector(state => state.scoreReducer)
+    const {energyTapNumberDecrease, totalEnergy} = useTypedSelector(state => state.energyReducer)
     const {BuyUpgradeVodka, BuyUpgradeRuslan} = useUpgrades()
+    useEffect(() => {
+        localStorage.setItem('score', score.toString())
+        localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
+        localStorage.setItem('vodkaPrice', VodkaPrice.toString())
+        localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+        localStorage.setItem('ruslanPrice', RuslanPrice.toString())
+        localStorage.setItem('totalEnergy', totalEnergy.toString())
+    }, [score, scoreTapNumber, VodkaPrice, energyTapNumberDecrease, totalEnergy]);
     return (
         <div className='upgrade-list'>
             <div className='upgrade-item'>
