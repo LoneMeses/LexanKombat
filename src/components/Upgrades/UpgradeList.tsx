@@ -9,7 +9,11 @@ import {useEffect} from "react";
 const UpgradeList = () => {
     const {RuslanPrice, VodkaPrice, VadimPrice} = useTypedSelector(state => state.priceReducer)
     const {score, scoreTapNumber} = useTypedSelector(state => state.scoreReducer)
-    const {energyTapNumberDecrease, totalEnergy, energyTapNumberIncrease} = useTypedSelector(state => state.energyReducer)
+    const {
+        energyTapNumberDecrease,
+        totalEnergy,
+        energyTapNumberIncrease
+    } = useTypedSelector(state => state.energyReducer)
     const {BuyUpgradeVodka, BuyUpgradeRuslan, BuyUpgradeVadim} = useUpgrades()
     useEffect(() => {
         localStorage.setItem('score', score.toString())
@@ -35,15 +39,15 @@ const UpgradeList = () => {
                 <p>+100 к энергии!</p>
                 <button onClick={BuyUpgradeRuslan}>{RuslanPrice}</button>
             </div>
-            <div className='upgrade-list'>
-                <div className='upgrade-item'>
-                    <img src={Vadim} alt="upgrade_item_src"/>
-                    <h4>Встретиться с Вадясом</h4>
-                    <p>+1 к восстановлению энергии</p>
-                    <button onClick={BuyUpgradeVadim}>{VadimPrice}</button>
-                </div>
+            <div className='upgrade-item'>
+                <img src={Vadim} alt="upgrade_item_src"/>
+                <h4>Встретиться с Вадясом</h4>
+                <p>+1 к восстановлению энергии</p>
+                <button onClick={BuyUpgradeVadim}>{VadimPrice}</button>
             </div>
         </div>
-    );}
+
+    );
+}
 
 export default UpgradeList;
