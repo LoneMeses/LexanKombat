@@ -20,10 +20,13 @@ export const useUpgrades = () => {
             dispatch(vodkaPriceIncrement())
             dispatch(EnergyLossOnTap(1))
             dispatch(scoreTapNumberIncrease())
-            localStorage.setItem('score', score.toString())
-            localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
-            localStorage.setItem('vodkaPrice', VodkaPrice.toString())
-            localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+            setTimeout(() => {
+                localStorage.setItem('score', score.toString())
+                localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
+                localStorage.setItem('vodkaPrice', VodkaPrice.toString())
+                localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+            }, 1000)
+
         }
 
     }
@@ -32,9 +35,12 @@ export const useUpgrades = () => {
             dispatch(scoreMinus(RuslanPrice))
             dispatch(ruslanPriceIncrement())
             dispatch(totalEnergyAdd(100))
-            localStorage.setItem('score', score.toString())
-            localStorage.setItem('ruslanPrice', RuslanPrice.toString())
-            localStorage.setItem('totalEnergy', totalEnergy.toString())
+            setTimeout(() => {
+                localStorage.setItem('score', score.toString())
+                localStorage.setItem('ruslanPrice', RuslanPrice.toString())
+                localStorage.setItem('totalEnergy', totalEnergy.toString())
+            }, 1000)
+
         }
     }
 

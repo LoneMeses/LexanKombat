@@ -50,11 +50,12 @@ const Game: FC = () => {
 
             dispatch(scoreIncrement())
             dispatch(energyDecrement())
-            localStorage.setItem('score', score.toString())
-            localStorage.setItem('energy', energy.toString())
+
             localStorage.setItem('closeTime', Date.now().toString())
 
             setTimeout(() => {
+                localStorage.setItem('score', score.toString())
+                localStorage.setItem('energy', energy.toString())
                 target.style.setProperty('--tiltX', `0deg`)
                 target.style.setProperty('--tiltX', `0deg`)
             }, 300)
