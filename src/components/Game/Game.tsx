@@ -32,7 +32,7 @@ const Game: FC = () => {
     }, [energy])
 
     const onClickHandler = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-        if (energy <= totalEnergy && energy > 0 && energy <= scoreTapNumber) {
+        if (energy > 0 && energy >= scoreTapNumber) {
             const target = event.target as HTMLImageElement
             const rect = target.getBoundingClientRect()
 
