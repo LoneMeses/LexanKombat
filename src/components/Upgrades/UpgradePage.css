@@ -6,6 +6,7 @@
     justify-items: center;
     align-items: center;
     padding-top: 20px;
+    font-family: "Montserrat", sans-serif;
 }
 .upgrade-item {
     display: block;
@@ -14,7 +15,7 @@
     width: 120px;
 }
 .upgrade-item img {
-    border-radius: 0;
+    border-radius: 5px;
     height: 100px;
     width: 100%;
     margin-bottom: 10px;

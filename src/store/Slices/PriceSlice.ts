@@ -2,8 +2,9 @@ import {IPrice} from "../../types/IPrice.ts";
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState: IPrice = {
-    VodkaPrice: parseInt(localStorage.getItem('vodkaPrice') as string) || 5,
-    RuslanPrice: parseInt(localStorage.getItem('ruslanPrice') as string) || 5,
+    VodkaPrice: parseInt(localStorage.getItem('vodkaPrice') as string) || 100,
+    RuslanPrice: parseInt(localStorage.getItem('ruslanPrice') as string) || 100,
+    VadimPrice: parseInt(localStorage.getItem('vadimPrice') as string) || 100,
 }
 
 export const priceSlice = createSlice({
@@ -11,11 +12,15 @@ export const priceSlice = createSlice({
     initialState,
     reducers: {
         vodkaPriceIncrement: (state: IPrice) => {
-            state.VodkaPrice += 10
+            state.VodkaPrice += 100
         },
         ruslanPriceIncrement: (state: IPrice) => {
-            state.RuslanPrice += 10
+            state.RuslanPrice += 100
+        },
+        vadimPriceIncrement: (state: IPrice) => {
+            state.VadimPrice += 100
         }
+
     }
 })
 

@@ -7,11 +7,11 @@ import {useDispatch} from "react-redux";
 
 
 export const useUpgrades = () => {
-    const {RuslanPrice, VodkaPrice} = useTypedSelector(state => state.priceReducer)
+    const {RuslanPrice, VodkaPrice, VadimPrice} = useTypedSelector(state => state.priceReducer)
     const {score} = useTypedSelector(state => state.scoreReducer)
     const {scoreMinus, scoreTapNumberIncrease} = scoreSlice.actions
-    const {EnergyLossOnTap, totalEnergyAdd} = energySlice.actions
-    const {vodkaPriceIncrement, ruslanPriceIncrement} = priceSlice.actions
+    const {EnergyLossOnTap, totalEnergyAdd, AddEnergyIncrese} = energySlice.actions
+    const {vodkaPriceIncrement, ruslanPriceIncrement, vadimPriceIncrement} = priceSlice.actions
     const dispatch: AppDispatch = useDispatch()
     const BuyUpgradeVodka = () => {
         if (score >= VodkaPrice) {
@@ -29,9 +29,17 @@ export const useUpgrades = () => {
             dispatch(totalEnergyAdd(100))
         }
     }
+    const BuyUpgradeVadim = () => {
+        if (score >= VadimPrice) {
+            dispatch(scoreMinus(VadimPrice))
+            dispatch(vadimPriceIncrement())
+            dispatch(AddEnergyIncrese(1))
+        }
+    }
 
     return {
         BuyUpgradeRuslan,
         BuyUpgradeVodka,
+        BuyUpgradeVadim
     }
 }
