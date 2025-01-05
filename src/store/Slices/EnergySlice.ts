@@ -27,6 +27,13 @@ export const energySlice = createSlice({
         },
         totalEnergyAdd (state: IEnergy, action: PayloadAction<number>) {
             state.totalEnergy += action.payload
+        },
+        energyOpenAddPlus (state: IEnergy, action: PayloadAction<number>) {
+            if(state.energy + action.payload >= state.totalEnergy) {
+                state.energy = state.totalEnergy
+            } else {
+                state.energy += action.payload
+            }
         }
     }
 })

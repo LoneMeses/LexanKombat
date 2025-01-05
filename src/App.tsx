@@ -7,23 +7,26 @@ import {Route, Routes} from "react-router";
 import Form from "./components/Form/Form.tsx";
 import './App.css'
 import UpgradePage from "./components/Upgrades/UpgradePage.tsx";
+import {useAppDispatch, useTypedSelector} from "./hooks/useTypedSelector.ts";
+import {AppDispatch} from "./store/store.ts";
+import {energySlice} from "./store/Slices/EnergySlice.ts";
 
 function KombatApp() {
     const {tg} = useTelegram()
-
+    const {energyTapNumberIncrease} = useTypedSelector(state => state.energyReducer)
+    const {energyOpenAddPlus} = energySlice.actions
+    const dispatch: AppDispatch = useAppDispatch()
 
     useEffect(() => {
         tg.ready()
         tg.expand()
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
-        const lastCurrentEnergy = parseInt(localStorage.getItem('energy') as string)
-        const energyForAdd = ((openTime - closeTime) / 3000)
-        if (energyForAdd + lastCurrentEnergy >= 3000) {
-            localStorage.setItem('energy', '3000')
-        } else {
-            localStorage.setItem('energy', (energyForAdd + lastCurrentEnergy).toString())
-        }
+        const energyForAdd = ((openTime - closeTime) * energyTapNumberIncrease / 1000)
+        setTimeout(() => {
+            dispatch(energyOpenAddPlus(energyForAdd))
+        }, 1000)
+
         //eslint-disable-next-line
     }, [])
 
