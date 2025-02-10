@@ -1,8 +1,8 @@
-import {useTypedSelector} from "../hooks/useTypedSelector.ts";
-import {scoreSlice} from "../store/Slices/ScoreSlice.ts";
-import {energySlice} from "../store/Slices/EnergySlice.ts";
-import {priceSlice} from "../store/Slices/PriceSlice.ts";
-import {AppDispatch} from "../store/store.ts";
+import {useTypedSelector} from "../../src/hooks/useTypedSelector.ts";
+import {scoreSlice} from "../../../src/store/Slices/ScoreSlice.ts";
+import {energySlice} from "../../../src/store/Slices/EnergySlice.ts";
+import {priceSlice} from "../../../src/store/Slices/PriceSlice.ts";
+import {AppDispatch} from "../../../src/store/store.ts";
 import {useDispatch} from "react-redux";
 
 

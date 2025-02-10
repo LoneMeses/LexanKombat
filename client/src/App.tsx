@@ -1,15 +1,15 @@
-import {useTelegram} from "./hooks/useTelegram.ts";
+import {useTelegram} from "../src/hooks/useTelegram.ts";
 import {useEffect} from "react";
-import Header from "./components/Header/Header.tsx";
-import Game from "./components/Game/Game.tsx";
-import Footer from "./components/Footer/Footer.tsx";
+import Header from "../../src/components/Header/Header.tsx";
+import Game from "../../src/components/Game/Game.tsx";
+import Footer from "../../src/components/Footer/Footer.tsx";
 import {Route, Routes} from "react-router";
-import Form from "./components/Form/Form.tsx";
+import Form from "../../src/components/Form/Form.tsx";
 import './App.css'
-import UpgradePage from "./components/Upgrades/UpgradePage.tsx";
-import {useAppDispatch, useTypedSelector} from "./hooks/useTypedSelector.ts";
-import {AppDispatch} from "./store/store.ts";
-import {energySlice} from "./store/Slices/EnergySlice.ts";
+import UpgradePage from "../../src/components/Upgrades/UpgradePage.tsx";
+import {useAppDispatch, useTypedSelector} from "../src/hooks/useTypedSelector.ts";
+import {AppDispatch} from "../../src/store/store.ts";
+import {energySlice} from "../../src/store/Slices/EnergySlice.ts";
 
 function KombatApp() {
     const {tg} = useTelegram()
