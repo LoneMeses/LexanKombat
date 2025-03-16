@@ -1,0 +1,36 @@
+.upgrade-list {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding-top: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+.upgrade-item {
+    display: block;
+    font-size: 16px;
+    height: 100%;
+    width: 120px;
+}
+.upgrade-item img {
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.upgrade-item button {
+    width: 100%;
+    border: none;
+    background: linear-gradient(170deg, rgba(67,5,250,1) 0%, rgba(139,6,157,1) 70%);
+    height: 30px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 10px;
+}
+.upgrade-item p {
+    font-size: 13px;
+    color: #656565;
+}

@@ -1,0 +1,89 @@
+.game {
+    display: flex;
+    background: #181a1c;
+    border-radius: 20px 20px 0 0;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-shadow: 0 -5px 50px #af94c7;
+    border-top: 2px solid #af94c7;
+    padding-bottom: 100px;
+}
+
+.counter {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.counter img {
+    width: 80px;
+    height: 50px;
+    user-select: none;
+}
+.counter span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+    color: whitesmoke;
+}
+
+.circle {
+    position: relative;
+}
+.circle img{
+    width: 370px;
+    height: 300px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    --tiltX: 0deg;
+    --tiltY: 0deg;
+    transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+    user-select: none;
+}
+#floating-score {
+    position: absolute;
+    pointer-events: none;
+    color: white;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+.energy-wrapper {
+    width: 90%;
+    border: 1px solid #ce991d;
+    background-color: #181a1c;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 0 5px #ce991d inset;
+    margin-bottom: 20px;
+}
+.energy-wrapper .energy-bar {
+    height: 30px;
+    background-color: #ce991d;
+    border-radius: 10px;
+    transition: width 500ms ease-in-out;
+}
+.energy-value {
+    position: absolute;
+    color: whitesmoke;
+    font-size: 16px;
+    width: 100%;
+}
