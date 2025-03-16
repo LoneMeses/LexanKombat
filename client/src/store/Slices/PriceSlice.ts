@@ -1,4 +1,4 @@
-import {IPrice} from "../../../client/src/types/IPrice.ts";
+import {IPrice} from "../../types/IPrice";
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState: IPrice = {

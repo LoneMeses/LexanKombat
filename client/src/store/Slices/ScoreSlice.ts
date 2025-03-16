@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IScore} from "../../../client/src/types/IScore.ts";
+import {IScore} from "../../types/IScore.ts";
 
 
 const initialState: IScore = {

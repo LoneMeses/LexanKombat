@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 import './Game.css'
 import Coin from '../../assets/lCoin.png'
 import Lexan from '../../assets/LexanButton.png'
-import {createFloatingScore} from "../../../client/src/utils/createFloatingScore.ts";
+import {createFloatingScore} from "../../utils/createFloatingScore.ts";
 import {useAppDispatch, useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {AppDispatch} from "../../store/store.ts";
 import {energySlice} from "../../store/Slices/EnergySlice.ts";

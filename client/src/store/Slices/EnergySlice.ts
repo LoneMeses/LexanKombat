@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IEnergy} from "../../../client/src/types/IEnergy.ts";
+import {IEnergy} from "../../types/IEnergy";
 
 
 const initialState: IEnergy = {

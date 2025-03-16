@@ -1,45 +1,37 @@
-import {useTypedSelector} from "../../src/hooks/useTypedSelector.ts";
-import {scoreSlice} from "../../../src/store/Slices/ScoreSlice.ts";
-import {energySlice} from "../../../src/store/Slices/EnergySlice.ts";
-import {priceSlice} from "../../../src/store/Slices/PriceSlice.ts";
-import {AppDispatch} from "../../../src/store/store.ts";
+import {useTypedSelector} from "../hooks/useTypedSelector.ts";
+import {scoreSlice} from "../store/Slices/ScoreSlice.ts";
+import {energySlice} from "../store/Slices/EnergySlice.ts";
+
+import {AppDispatch} from "../store/store.ts";
 import {useDispatch} from "react-redux";
 
 
 export const useUpgrades = () => {
-    const {RuslanPrice, VodkaPrice, VadimPrice} = useTypedSelector(state => state.priceReducer)
     const {score} = useTypedSelector(state => state.scoreReducer)
     const {scoreMinus, scoreTapNumberIncrease} = scoreSlice.actions
     const {EnergyLossOnTap, totalEnergyAdd, AddEnergyIncrese} = energySlice.actions
-    const {vodkaPriceIncrement, ruslanPriceIncrement, vadimPriceIncrement} = priceSlice.actions
     const dispatch: AppDispatch = useDispatch()
-    const BuyUpgradeVodka = () => {
-        if (score >= VodkaPrice) {
-            dispatch(scoreMinus(VodkaPrice))
-            dispatch(vodkaPriceIncrement())
-            dispatch(EnergyLossOnTap(1))
-            dispatch(scoreTapNumberIncrease())
-        }
 
-    }
-    const BuyUpgradeRuslan = () => {
-        if (score >= RuslanPrice) {
-            dispatch(scoreMinus(RuslanPrice))
-            dispatch(ruslanPriceIncrement())
-            dispatch(totalEnergyAdd(100))
-        }
-    }
-    const BuyUpgradeVadim = () => {
-        if (score >= VadimPrice) {
-            dispatch(scoreMinus(VadimPrice))
-            dispatch(vadimPriceIncrement())
-            dispatch(AddEnergyIncrese(1))
+    const buyUpgrade = (price: number, type: string, incrementFunc: () => void ) => {
+        if(score >= price) {
+            dispatch(scoreMinus(price))
+            dispatch(incrementFunc)
+            switch (type) {
+                case 'scoreIncrease':
+                    dispatch(EnergyLossOnTap(1))
+                    dispatch(scoreTapNumberIncrease())
+                    break
+                case 'energyAdd':
+                    dispatch(totalEnergyAdd(100))
+                    break
+                case 'energyIncrease':
+                    dispatch(AddEnergyIncrese(1))
+                    break
+            }
         }
     }
 
-    return {
-        BuyUpgradeRuslan,
-        BuyUpgradeVodka,
-        BuyUpgradeVadim
-    }
+
+
+    return {buyUpgrade}
 }
