@@ -1,7 +1,9 @@
 const TelegramBot = require('node-telegram-bot-api');
-const {TOKEN} = require('./consts')
+const process = require('process')
+const dotenv = require('dotenv')
+dotenv.config()
 const fs = require('fs');
-const token = TOKEN
+const token = process.env.TOKEN
 const FILE_PATH = './chatIds.json';
 const webAppUrl = 'https://extraordinary-sunburst-038b24.netlify.app'
 const bot = new TelegramBot(token, {polling: true});
