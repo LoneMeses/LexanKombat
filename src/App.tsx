@@ -26,7 +26,7 @@ function KombatApp() {
         const openTime = Date.now()
         const energyForAdd = Math.ceil(((openTime - closeTime) * energyTapNumberIncrease / 1000))
         if(user) {
-            dispatch(setUser({name: user.first_name, id: user.id, img: user.photo_url, isAdmin: user.id === 2131234}))
+            dispatch(setUser({name: user.first_name, id: user.id, img: user.photo_url, isAdmin: user.id === 989872053}))
         }
         setTimeout(() => {
             dispatch(energyOpenAddPlus(energyForAdd))
