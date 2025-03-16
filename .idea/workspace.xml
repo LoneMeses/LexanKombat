@@ -5,28 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea095049-cb57-4497-a152-3dc0c70b7bc0" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/LexanButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/LexanButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Rusik.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/Rusik.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Vadim.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/Vadim.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Vodka.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/Vodka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/lCoin.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/lCoin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Game/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Game/Game.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Upgrades/UpgradeList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upgrades/UpgradeList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useTelegram.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useTelegram.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useTypedSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useTypedSelector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/EnergySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/EnergySlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/PriceSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/PriceSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/ScoreSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/ScoreSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/IEnergy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/IEnergy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/IPrice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/IPrice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/IScore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/IScore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/declaration.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/declaration.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/createFloatingScore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/createFloatingScore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/useUpgrades.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/useUpgrades.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/LexanButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Rusik.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Vadim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Vodka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/lCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/Form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/Form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Game/Game.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Game/Game.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upgrades/UpgradeList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upgrades/UpgradePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upgrades/UpgradePage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useTelegram.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useTypedSelector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/Slices/EnergySlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/Slices/PriceSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/Slices/ScoreSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/Slices/UserSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/IEnergy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/IPrice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/IScore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/IUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/declaration.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/createFloatingScore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/useUpgrades.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +81,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.npm dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Eblan\\WebstormProjects\\lexan-kombat\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm dev.executor": "Run",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\Eblan\\WebstormProjects\\lexan-kombat\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -321,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736088034068</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="init">
+      <option name="closed" value="true" />
+      <created>1742088768119</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1742088768119</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
