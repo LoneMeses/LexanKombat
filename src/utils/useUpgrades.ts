@@ -4,27 +4,31 @@ import {energySlice} from "../store/Slices/EnergySlice.ts";
 
 import {AppDispatch} from "../store/store.ts";
 import {useDispatch} from "react-redux";
+import {priceSlice} from "../store/Slices/PriceSlice.ts";
 
 
 export const useUpgrades = () => {
     const {score} = useTypedSelector(state => state.scoreReducer)
     const {scoreMinus, scoreTapNumberIncrease} = scoreSlice.actions
+    const {vodkaPriceIncrement,ruslanPriceIncrement,vadimPriceIncrement} = priceSlice.actions
     const {EnergyLossOnTap, totalEnergyAdd, AddEnergyIncrese} = energySlice.actions
     const dispatch: AppDispatch = useDispatch()
 
-    const buyUpgrade = (price: number, type: string, incrementFunc: void ) => {
+    const buyUpgrade = (price: number, type: string ) => {
         if(score >= price) {
             dispatch(scoreMinus(price))
-            dispatch(() => incrementFunc)
             switch (type) {
                 case 'scoreIncrease':
+                    dispatch(vodkaPriceIncrement())
                     dispatch(EnergyLossOnTap(1))
                     dispatch(scoreTapNumberIncrease())
                     break
                 case 'energyAdd':
+                    dispatch(ruslanPriceIncrement())
                     dispatch(totalEnergyAdd(100))
                     break
                 case 'energyIncrease':
+                    dispatch(vadimPriceIncrement())
                     dispatch(AddEnergyIncrese(1))
                     break
             }

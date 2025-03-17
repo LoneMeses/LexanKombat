@@ -33,7 +33,7 @@ const UpgradeList = () => {
                 <img src={Vodka} alt="upgrade_item_src"/>
                 <h4>Хлебнуть Volodink'и</h4>
                 <p>+1 коин за клик!</p>
-                <button onClick={ () => buyUpgrade(VodkaPrice, 'scoreIncrease', vodkaPriceIncrement)}>{VodkaPrice}</button>
+                <button onClick={ () => buyUpgrade(VodkaPrice, 'scoreIncrease')}>{VodkaPrice}</button>
             </div>
             <div className='upgrade-item'>
                 <img src={Ruslan} alt="upgrade_item_src"/>
