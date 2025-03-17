@@ -12,10 +12,10 @@ export const useUpgrades = () => {
     const {EnergyLossOnTap, totalEnergyAdd, AddEnergyIncrese} = energySlice.actions
     const dispatch: AppDispatch = useDispatch()
 
-    const buyUpgrade = (price: number, type: string, incrementFunc: () => void ) => {
+    const buyUpgrade = (price: number, type: string, incrementFunc: void ) => {
         if(score >= price) {
             dispatch(scoreMinus(price))
-            dispatch(incrementFunc)
+            dispatch(() => incrementFunc)
             switch (type) {
                 case 'scoreIncrease':
                     dispatch(EnergyLossOnTap(1))
