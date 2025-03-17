@@ -39,13 +39,13 @@ const UpgradeList = () => {
                 <img src={Ruslan} alt="upgrade_item_src"/>
                 <h4>Дать покурить Русику</h4>
                 <p>+100 к энергии!</p>
-                <button onClick={() => buyUpgrade(RuslanPrice, 'energyAdd', ruslanPriceIncrement)}>{RuslanPrice}</button>
+                <button onClick={() => buyUpgrade(RuslanPrice, 'energyAdd')}>{RuslanPrice}</button>
             </div>
             <div className='upgrade-item'>
                 <img src={Vadim} alt="upgrade_item_src"/>
                 <h4>Встретиться с Вадясом</h4>
                 <p>+1 к восстановлению энергии</p>
-                <button onClick={() => buyUpgrade(VadimPrice, 'energyIncrease', vadimPriceIncrement)}>{VadimPrice}</button>
+                <button onClick={() => buyUpgrade(VadimPrice, 'energyIncrease')}>{VadimPrice}</button>
             </div>
         </div>
 
