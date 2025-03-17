@@ -5,7 +5,6 @@ import './UpgradePage.css'
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {useUpgrades} from "../../utils/useUpgrades.ts";
 import {useEffect} from "react";
-import {priceSlice} from "../../store/Slices/PriceSlice.ts";
 
 const UpgradeList = () => {
     const {RuslanPrice, VodkaPrice, VadimPrice} = useTypedSelector(state => state.priceReducer)
@@ -15,7 +14,6 @@ const UpgradeList = () => {
         totalEnergy,
         energyTapNumberIncrease
     } = useTypedSelector(state => state.energyReducer)
-    const {ruslanPriceIncrement, vodkaPriceIncrement,vadimPriceIncrement} = priceSlice.actions
     const {buyUpgrade} = useUpgrades()
     useEffect(() => {
         localStorage.setItem('score', score.toString())
