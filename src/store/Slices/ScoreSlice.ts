@@ -11,6 +11,10 @@ export const scoreSlice = createSlice({
     name: 'score',
     initialState,
     reducers: {
+        setScore: (state: IScore, action: PayloadAction<IScore>) => {
+            state.score = action.payload.score;
+            state.scoreTapNumber = action.payload.scoreTapNumber
+        },
         scoreIncrement: (state: IScore) => {
             state.score += state.scoreTapNumber
         },

@@ -11,7 +11,7 @@ export const useUpgrades = () => {
     const {score} = useTypedSelector(state => state.scoreReducer)
     const {scoreMinus, scoreTapNumberIncrease} = scoreSlice.actions
     const {vodkaPriceIncrement,ruslanPriceIncrement,vadimPriceIncrement} = priceSlice.actions
-    const {EnergyLossOnTap, totalEnergyAdd, AddEnergyIncrese} = energySlice.actions
+    const {EnergyLossOnTap, totalEnergyAdd, EnergyAddOnSeconds} = energySlice.actions
     const dispatch: AppDispatch = useDispatch()
 
     const buyUpgrade = (price: number, type: string ) => {
@@ -29,7 +29,7 @@ export const useUpgrades = () => {
                     break
                 case 'energyIncrease':
                     dispatch(vadimPriceIncrement())
-                    dispatch(AddEnergyIncrese(1))
+                    dispatch(EnergyAddOnSeconds(1))
                     break
             }
         }

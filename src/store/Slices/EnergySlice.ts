@@ -4,8 +4,8 @@ import {IEnergy} from "../../types/IEnergy";
 
 const initialState: IEnergy = {
     energy: parseInt(localStorage.getItem("energy") as string) || 3000,
-    energyTapNumberIncrease: parseInt(localStorage.getItem("energyTapNumberIncrease") as string) || 1,
-    energyTapNumberDecrease: parseInt(localStorage.getItem("energyTapNumberDecrease") as string) || 1,
+    energyAddOnSeconds: parseInt(localStorage.getItem("energyTapNumberIncrease") as string) || 1,
+    energyLossOnTap: parseInt(localStorage.getItem("energyTapNumberDecrease") as string) || 1,
     totalEnergy: parseInt(localStorage.getItem("totalEnergy") as string) || 3000,
 }
 
@@ -13,17 +13,23 @@ export const energySlice = createSlice({
     name: 'energy',
     initialState,
     reducers: {
+        setEnergy (state: IEnergy, action: PayloadAction<IEnergy>) {
+          state.energy = action.payload.energy
+          state.energyAddOnSeconds = action.payload.energyAddOnSeconds
+          state.energyLossOnTap = action.payload.energyLossOnTap
+          state.totalEnergy = action.payload.totalEnergy
+        },
         energyDecrement (state: IEnergy) {
-            state.energy -= state.energyTapNumberDecrease;
+            state.energy -= state.energyLossOnTap;
         },
         energyIncrement (state: IEnergy) {
-            state.energy += state.energyTapNumberIncrease;
+            state.energy += state.energyAddOnSeconds;
         },
-        AddEnergyIncrese (state: IEnergy, action: PayloadAction<number>) {
-            state.energyTapNumberIncrease += action.payload
+        EnergyAddOnSeconds (state: IEnergy, action: PayloadAction<number>) {
+            state.energyAddOnSeconds += action.payload
         },
         EnergyLossOnTap (state: IEnergy, action: PayloadAction<number>) {
-            state.energyTapNumberDecrease += action.payload
+            state.energyLossOnTap += action.payload
         },
         totalEnergyAdd (state: IEnergy, action: PayloadAction<number>) {
             state.totalEnergy += action.payload

@@ -10,21 +10,21 @@ const UpgradeList = () => {
     const {RuslanPrice, VodkaPrice, VadimPrice} = useTypedSelector(state => state.priceReducer)
     const {score, scoreTapNumber} = useTypedSelector(state => state.scoreReducer)
     const {
-        energyTapNumberDecrease,
+        energyLossOnTap,
         totalEnergy,
-        energyTapNumberIncrease
+        energyAddOnSeconds
     } = useTypedSelector(state => state.energyReducer)
     const {buyUpgrade} = useUpgrades()
     useEffect(() => {
         localStorage.setItem('score', score.toString())
         localStorage.setItem('scoreTapNumber', scoreTapNumber.toString())
         localStorage.setItem('vodkaPrice', VodkaPrice.toString())
-        localStorage.setItem('energyTapNumberDecrease', energyTapNumberDecrease.toString())
+        localStorage.setItem('energyTapNumberDecrease', energyLossOnTap.toString())
         localStorage.setItem('ruslanPrice', RuslanPrice.toString())
         localStorage.setItem('totalEnergy', totalEnergy.toString())
         localStorage.setItem('vadimPrice', VadimPrice.toString())
-        localStorage.setItem('energyTapNumberIncrease', energyTapNumberIncrease.toString())
-    }, [score, scoreTapNumber, VodkaPrice, energyTapNumberDecrease, totalEnergy, VadimPrice, energyTapNumberIncrease, RuslanPrice]);
+        localStorage.setItem('energyTapNumberIncrease', energyAddOnSeconds.toString())
+    }, [score, scoreTapNumber, VodkaPrice, energyLossOnTap, totalEnergy, VadimPrice, energyAddOnSeconds, RuslanPrice]);
     return (
         <div className='upgrade-list'>
             <div className='upgrade-item'>

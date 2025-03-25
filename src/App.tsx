@@ -10,24 +10,37 @@ import UpgradePage from "./components/Upgrades/UpgradePage.tsx";
 import {useAppDispatch, useTypedSelector} from "./hooks/useTypedSelector.ts";
 import {AppDispatch} from "./store/store.ts";
 import {energySlice} from "./store/Slices/EnergySlice.ts";
-import {userSlice} from "./store/Slices/UserSlice.ts";
+import {userApi} from "./services/userService.ts";
+// import {userSlice} from "./store/Slices/UserSlice.ts";
 
 function KombatApp() {
     const {tg, user} = useTelegram()
-    const {energyTapNumberIncrease} = useTypedSelector(state => state.energyReducer)
+    const {energyAddOnSeconds} = useTypedSelector(state => state.energyReducer)
     const {energyOpenAddPlus} = energySlice.actions
-    const {setUser} = userSlice.actions
+    // const {setUser} = userSlice.actions
     const dispatch: AppDispatch = useAppDispatch()
+    const [createUser] = userApi.useCreateUserMutation()
+
+    const handleCreate = async () => {
+        try {
+            if(user) {
+                await createUser({id: user.id, name: user.first_name, img: user.photo_url, isAdmin: false})
+            }
+        } catch (e: unknown) {
+            if (e.status === 404 && user) {
+                const {data} = userApi.useFetchUserFromDBQuery(user.id)
+                console.log(data)
+            }
+        }
+    }
 
     useEffect(() => {
         tg.ready()
         tg.expand()
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
-        const energyForAdd = Math.ceil(((openTime - closeTime) * energyTapNumberIncrease / 1000))
-        if(user) {
-            dispatch(setUser({name: user.first_name, id: user.id, img: user.photo_url, isAdmin: user.id === 989872053}))
-        }
+        const energyForAdd = Math.ceil(((openTime - closeTime) * energyAddOnSeconds / 1000))
+        handleCreate()
         setTimeout(() => {
             dispatch(energyOpenAddPlus(energyForAdd))
         }, 1000)
