@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea095049-cb57-4497-a152-3dc0c70b7bc0" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Upgrades/UpgradeList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upgrades/UpgradeList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/EnergySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/EnergySlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/PriceSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/PriceSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Slices/ScoreSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Slices/ScoreSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/IEnergy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/IEnergy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/useUpgrades.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/useUpgrades.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +132,8 @@
       <workItem from="1742659632542" duration="20000" />
       <workItem from="1742659755481" duration="15000" />
       <workItem from="1742824251182" duration="6067000" />
-      <workItem from="1742903016485" duration="2757000" />
+      <workItem from="1742903016485" duration="7521000" />
+      <workItem from="1742936508295" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -373,7 +367,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742171131152</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="init">
+      <option name="closed" value="true" />
+      <created>1742907472225</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907472225</updated>
+    </task>
+    <task id="LOCAL-00031" summary="init">
+      <option name="closed" value="true" />
+      <created>1742907481917</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907481917</updated>
+    </task>
+    <task id="LOCAL-00032" summary="init">
+      <option name="closed" value="true" />
+      <created>1742907565843</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907565843</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

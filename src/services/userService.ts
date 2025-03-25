@@ -5,7 +5,7 @@ import {UserDTO, UsersForLeaderboard} from "../types/UserDTO.ts";
 
 export const userApi = createApi({
     reducerPath: 'userAPI',
-    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000/api/user'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'http://lexan-kombat-server-production.up.railway.app/api/user'}),
     endpoints: (build) => ({
         fetchUserFromDB: build.query<UserDTO, number>({
             query: (id: number) => ({
