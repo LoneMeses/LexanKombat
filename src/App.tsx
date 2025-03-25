@@ -27,6 +27,8 @@ function KombatApp() {
                 await createUser({id: user.id, name: user.first_name, img: user.photo_url, isAdmin: false})
             }
         } catch (e: unknown) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             if (e.status === 404 && user) {
                 const {data} = userApi.useFetchUserFromDBQuery(user.id)
                 console.log(data)
