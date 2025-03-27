@@ -3,10 +3,9 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
 const initialState: IUser = {
-    id: Date.now(),
-    name: '',
-    chatId: null,
-    img: '',
+    userId: Date.now(),
+    firstName: '',
+    photoUrl: '',
     isAdmin: false
 }
 
@@ -15,10 +14,9 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state: IUser, action: PayloadAction<IUser>)=> {
-            state.name = action.payload.name;
-            state.img = action.payload.img;
-            state.id = action.payload.id;
-            state.chatId = action.payload.chatId;
+            state.firstName = action.payload.firstName;
+            state.photoUrl = action.payload.photoUrl;
+            state.userId = action.payload.userId;
             state.isAdmin = action.payload.isAdmin;
         }
     }
