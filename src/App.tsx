@@ -10,7 +10,8 @@ import UpgradePage from "./components/Upgrades/UpgradePage.tsx";
 import {useAppDispatch, useTypedSelector} from "./hooks/useTypedSelector.ts";
 import {AppDispatch} from "./store/store.ts";
 import {energySlice} from "./store/Slices/EnergySlice.ts";
-import {userApi} from "./services/userService.ts";
+import {createUser} from "./services/axiosService.ts";
+// import {userApi} from "./services/userService.ts";
 // import {userSlice} from "./store/Slices/UserSlice.ts";
 
 function KombatApp() {
@@ -19,9 +20,9 @@ function KombatApp() {
     const {energyOpenAddPlus} = energySlice.actions
     // const {setUser} = userSlice.actions
     const dispatch: AppDispatch = useAppDispatch()
-    const [createUser] = userApi.useCreateUserMutation()
+    // const [createUser] = userApi.useCreateUserMutation()
 
-    const handleCreate = async () => {
+   /* const handleCreate = async () => {
         try {
             if(user) {
                 await createUser({id: user.id, name: user.first_name, img: user.photo_url, isAdmin: false})
@@ -34,7 +35,7 @@ function KombatApp() {
                 console.log(data)
             }
         }
-    }
+    }*/
 
     useEffect(() => {
         tg.ready()
@@ -42,8 +43,17 @@ function KombatApp() {
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
         const energyForAdd = Math.ceil(((openTime - closeTime) * energyAddOnSeconds / 1000))
-        handleCreate().then(response => console.log(response))
+        // handleCreate().then(response => console.log(response))
+
         setTimeout(() => {
+            const userForSend = {
+                userId: user!.id,
+                firstName: user!.first_name,
+                photoUrl: user!.photo_url,
+                isAdmin: false,
+            }
+            const response = createUser(userForSend)
+            console.log(response)
             dispatch(energyOpenAddPlus(energyForAdd))
         }, 1000)
 

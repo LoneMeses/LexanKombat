@@ -1,6 +1,6 @@
 export interface IUser {
-    id: number
-    name: string
-    img: string | undefined
+    userId: number
+    firstName: string
+    photoUrl: string | undefined
     isAdmin: boolean
 }

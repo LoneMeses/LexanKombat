@@ -1,3 +1,4 @@
+/*
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {IUser} from "../types/IUser.ts";
 import {UserDTO, UsersForLeaderboard} from "../types/UserDTO.ts";
@@ -37,4 +38,4 @@ export const userApi = createApi({
             })
         })
     })
-})
+})*/
