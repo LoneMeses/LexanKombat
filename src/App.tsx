@@ -42,7 +42,7 @@ function KombatApp() {
         const closeTime = parseInt(localStorage.getItem('closeTime') as string) || Date.now();
         const openTime = Date.now()
         const energyForAdd = Math.ceil(((openTime - closeTime) * energyAddOnSeconds / 1000))
-        handleCreate()
+        handleCreate().then(response => console.log(response))
         setTimeout(() => {
             dispatch(energyOpenAddPlus(energyForAdd))
         }, 1000)
