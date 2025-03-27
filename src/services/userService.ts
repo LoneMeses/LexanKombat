@@ -9,6 +9,7 @@ export const userApi = createApi({
     endpoints: (build) => ({
         fetchUserFromDB: build.query<UserDTO, number>({
             query: (id: number) => ({
+                mode: "no-cors",
                 url: `/${id}`,
 
             })
@@ -16,6 +17,7 @@ export const userApi = createApi({
         createUser: build.mutation<IUser, IUser>({
            query: (user) => ({
                url: `/`,
+               mode: "no-cors",
                method: "POST",
                body: user
            })
@@ -23,12 +25,14 @@ export const userApi = createApi({
         updateUser: build.mutation<string, UserDTO>({
             query: (user) => ({
                 url: `/${user.user.id}`,
+                mode: "no-cors",
                 method: "PATCH",
                 body: user
             })
         }),
         fetchUsersForLead: build.query<UsersForLeaderboard[], null>({
             query: () => ({
+                mode: "no-cors",
                 url: `/`,
             })
         })
